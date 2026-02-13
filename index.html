@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelvin M. | Portfolio</title>
+    <title>Kelvin Medina | Portafolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,7 +28,12 @@
     <!-- Project Center UI -->
     <div class="static-outer-circle"></div>
     <div class="static-center-ui">
-        <div class="project-label" id="center-label">VELVETDIGITAL.COM →</div>
+        <div class="water-toggle">
+            <input type="checkbox" id="toggle-wave">
+            <div class="ripples-container">
+                <button class="water-button project-label" id="center-label">VELVETDIGITAL.COM →</button>
+            </div>
+        </div>
     </div>
 
     <!-- Grid lines -->
@@ -71,7 +76,7 @@
                 </div>
                 <div></div>
                 <div><span class="project-num">#001</span></div>
-                <div>02.2025 - 01.2026</div>
+                <div>02.2025 <span class="hide-mobile">- 01.2026</span></div>
             </div>
         </div>
         <div class="project-header" id="h1">
@@ -81,7 +86,7 @@
                 </div>
                 <div></div>
                 <div><span class="project-num">#002</span></div>
-                <div>04.2024 - Present</div>
+                <div>04.2024 <span class="hide-mobile">- Present</span></div>
             </div>
         </div>
         <div class="project-header" id="h2">
@@ -92,7 +97,7 @@
                 </div>
                 <div></div>
                 <div><span class="project-num">#003</span></div>
-                <div>04.2024 - Present</div>
+                <div>04.2024 <span class="hide-mobile">- Present</span></div>
             </div>
         </div>
         <div class="project-header" id="h3">
@@ -102,7 +107,7 @@
                 </div>
                 <div></div>
                 <div><span class="project-num">#004</span></div>
-                <div>11.2025 - Present</div>
+                <div>11.2025 <span class="hide-mobile">- Present</span></div>
             </div>
         </div>
         <div class="project-header" id="h4">
@@ -113,7 +118,7 @@
                 </div>
                 <div></div>
                 <div><span class="project-num">#005</span></div>
-                <div>02.2026 - Present</div>
+                <div>02.2026 <span class="hide-mobile">- Present</span></div>
             </div>
         </div>
         <div class="project-header" id="h5">
@@ -124,7 +129,7 @@
                 </div>
                 <div></div>
                 <div><span class="project-num">#006</span></div>
-                <div>05.2025 - 07.2025</div>
+                <div>05.2025 <span class="hide-mobile">- 07.2025</span></div>
             </div>
         </div>
         <div class="project-header" id="h6">
@@ -135,7 +140,7 @@
                 </div>
                 <div></div>
                 <div><span class="project-num">#007</span></div>
-                <div>07.2025 - Present</div>
+                <div>07.2025 <span class="hide-mobile">- Present</span></div>
             </div>
         </div>
     </div>
@@ -194,6 +199,25 @@
             <div class="row-footer-info"></div>
         </section>
     </main>
+
+    <!-- SVG Filters for Liquid Effect -->
+    <svg style="visibility: hidden; position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg"
+        version="1.1">
+        <defs>
+            <filter id="still-water">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
+            </filter>
+            <filter id="water-rotate">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" />
+            </filter>
+            <filter id="water">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
+            </filter>
+        </defs>
+    </svg>
 
     <script src="script.js"></script>
 </body>

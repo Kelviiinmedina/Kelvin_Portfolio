@@ -31,15 +31,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 50);
         } else {
             // Normal entry: Fade in to show video
+            const introVideo = document.getElementById('intro-video');
+
             setTimeout(() => {
                 document.body.classList.remove('transitioning');
             }, 100);
 
-            // Then slide up after 1.5s
+            // Start fade in shortly after
+            setTimeout(() => {
+                if (introVideo) introVideo.classList.add('fade-in');
+            }, 400);
+
+            // Then slide up after 2s (adjusted for fade time)
             setTimeout(() => {
                 intro.classList.add('slide-up');
-                document.body.classList.remove('intro-active');
-            }, 1800);
+
+                // Keep intro-active (black bg) until slide-up transition is nearly done
+                setTimeout(() => {
+                    document.body.classList.remove('intro-active');
+                }, 1100);
+            }, 2200);
         }
     } else {
         // CV page: Normal fade in

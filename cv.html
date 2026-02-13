@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelvin A. Medina | CV</title>
+    <title>Kelvin Medina | CV</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
@@ -33,7 +33,7 @@
             </div>
         </section>
 
-        <section class="cv-details" style="border-top: none; padding-top: 0;">
+        <section class="cv-details" id="intro-profile">
             <div class="cv-section" style="grid-column: 1 / -1;">
                 <div class="cv-section-title">PROFILE</div>
                 <div class="cv-desc" style="max-width: 80ch; font-size: 1.1rem;">
@@ -51,9 +51,7 @@
                 <div class="cv-item">
                     <div class="cv-date">2024 — 2026</div>
                     <div class="cv-role">MACAW DIGITAL</div>
-                    <div class="cv-role" style="font-size: 1rem; margin-top: -0.5rem; opacity: 0.7;">LEAD GRAPHIC
-                        DESIGNER
-                    </div>
+                    <div class="cv-role sub-role">LEAD GRAPHIC DESIGNER</div>
                     <div class="cv-desc" style="margin-bottom: 1rem;">
                         <ul style="list-style: none; padding: 0;">
                             <li style="margin-bottom: 0.5rem;">• <strong>Social Media Strategy:</strong> Directed social
@@ -92,21 +90,21 @@
 
             <div class="cv-section" style="grid-column: 1 / -1;">
                 <div class="cv-section-title">SERVICES</div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div class="cv-services-grid">
                     <div class="cv-item">
-                        <div class="cv-role" style="font-size: 1.1rem;">SOCIAL MEDIA & SYSTEMS</div>
+                        <div class="cv-role">SOCIAL MEDIA & SYSTEMS</div>
                         <div class="cv-desc">From content creation to scalable design systems. I design scroll-stopping
                             assets and campaigns for Instagram, TikTok, and LinkedIn—built with reusable frameworks that
                             ensure your brand grows consistently across every platform.</div>
                     </div>
                     <div class="cv-item">
-                        <div class="cv-role" style="font-size: 1.1rem;">VIDEO & MOTION</div>
+                        <div class="cv-role">VIDEO & MOTION</div>
                         <div class="cv-desc">Dynamic video edits and motion graphics tailored for brand storytelling. I
                             combine sharp cuts and sound design to produce reels and ads that captivate and
                             convert—optimizing workflows to deliver high-quality content at scale.</div>
                     </div>
                     <div class="cv-item">
-                        <div class="cv-role" style="font-size: 1.1rem;">BRAND ARCHITECTURE</div>
+                        <div class="cv-role">BRAND ARCHITECTURE</div>
                         <div class="cv-desc">Crafting bold, strategic brand visuals—logos, typography, and full design
                             systems. My process ensures every asset is intentional and timeless, providing a solid
                             foundation that functions seamlessly across print, digital, and motion.</div>
@@ -157,11 +155,35 @@
         </section>
     </main>
 
-    <!-- Project Center UI (Persistent but scaled back) -->
+    <!-- Project Center UI with Liquid Effect -->
     <div class="static-outer-circle"></div>
     <div class="static-center-ui">
-        <div class="project-label">DOWNLOAD PDF →</div>
+        <div class="water-toggle">
+            <input type="checkbox" id="toggle-wave">
+            <div class="ripples-container">
+                <button class="water-button project-label">DOWNLOAD PDF →</button>
+            </div>
+        </div>
     </div>
+
+    <!-- SVG Filters for Liquid Effect -->
+    <svg style="visibility: hidden; position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg"
+        version="1.1">
+        <defs>
+            <filter id="still-water">
+                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
+            </filter>
+            <filter id="water-rotate">
+                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" />
+            </filter>
+            <filter id="water">
+                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
+            </filter>
+        </defs>
+    </svg>
 
     <script src="script.js"></script>
     <script src="fluid.js"></script>
