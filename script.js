@@ -46,10 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 intro.classList.add('slide-up');
 
-                // Keep intro-active (black bg) until slide-up transition is nearly done
-                setTimeout(() => {
-                    document.body.classList.remove('intro-active');
-                }, 1100);
+                // Remove intro-active (black bg) exactly when slide starts
+                // so the light background starts transitioning in as the intro slides away
+                document.body.classList.remove('intro-active');
             }, 2200);
         }
     } else {
