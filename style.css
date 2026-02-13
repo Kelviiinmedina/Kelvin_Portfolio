@@ -139,6 +139,15 @@ body.transition-gray-grad {
     background: #fff;
 }
 
+.get-on-list:hover+.menu-btn {
+    background: #fff;
+    color: #000;
+}
+
+.get-on-list:hover+.menu-btn span {
+    background: #000;
+}
+
 .menu-btn {
     background: #000;
     color: #fff;
@@ -150,6 +159,9 @@ body.transition-gray-grad {
     align-items: center;
     gap: 3px;
     cursor: pointer;
+    border: var(--line-weight) solid #000;
+    border-left: none;
+    /* Merges with VIEW CV */
 }
 
 .menu-btn span {
@@ -321,8 +333,8 @@ body.transition-gray-grad {
 }
 
 .project-label {
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(25px) saturate(160%);
@@ -331,7 +343,7 @@ body.transition-gray-grad {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     color: var(--accent-red);
     font-family: var(--font-mono);
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     display: flex;

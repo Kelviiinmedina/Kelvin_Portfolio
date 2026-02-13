@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const headerHeight = 21;
 
     const projectNames = [
-        "UNOTRANS →",
-        "RENTIFY →",
-        "MACAW DIGITAL →",
-        "PLC →",
-        "TECNIFIBRE →",
-        "MEDIPLAZA →",
-        "MEDICOMANIA →"
+        "UNOTRANS",
+        "RENTIFY",
+        "MACAW DIGITAL",
+        "PLC",
+        "TECNIFIBRE",
+        "MEDIPLAZA",
+        "MEDICOMANIA"
     ];
 
     // Splash Screen & Page Fade-in
@@ -173,6 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
             rows[i].scrollIntoView({ behavior: 'smooth' });
         });
     });
+
+    // Fix Latest Button scroll to bottom
+    const latestBtn = document.querySelector('.latest-button');
+    if (latestBtn) {
+        latestBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            });
+        });
+    }
 
     // Bidirectional Navigation Logic (Index <-> CV)
     let isTransitioning = false;
