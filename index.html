@@ -28,12 +28,7 @@
     <!-- Project Center UI -->
     <div class="static-outer-circle"></div>
     <div class="static-center-ui">
-        <div class="water-toggle">
-            <input type="checkbox" id="toggle-wave">
-            <div class="ripples-container">
-                <button class="water-button project-label" id="center-label">VELVETDIGITAL.COM →</button>
-            </div>
-        </div>
+        <button class="project-label" id="center-label">VELVETDIGITAL.COM →</button>
     </div>
 
     <!-- Grid lines -->
@@ -200,24 +195,7 @@
         </section>
     </main>
 
-    <!-- SVG Filters for Liquid Effect -->
-    <svg style="visibility: hidden; position: absolute; width: 0; height: 0;" xmlns="http://www.w3.org/2000/svg"
-        version="1.1">
-        <defs>
-            <filter id="still-water">
-                <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
-            </filter>
-            <filter id="water-rotate">
-                <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" />
-            </filter>
-            <filter id="water">
-                <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise" />
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" />
-            </filter>
-        </defs>
-    </svg>
+
 
     <script src="script.js"></script>
 </body>
