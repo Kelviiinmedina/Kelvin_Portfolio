@@ -92,16 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             centerLabel.innerText = projectNames[activeProjectIndex] || "PROJECT →";
         }
 
-        // Determine the highest index header that has reached its slot
-        let lastDockedIndex = -1;
-        headers.forEach((h, j) => {
-            const rowRect = rows[j].getBoundingClientRect();
-            const slotIndex = j - windowStart;
-            const slotTop = slotIndex * headerHeight;
-            if (rowRect.top <= slotTop + 1) {
-                lastDockedIndex = j;
-            }
-        });
+
 
         headers.forEach((header, j) => {
             const row = rows[j];
@@ -132,8 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.style.top = `${finalTop}px`;
 
                 // Toggle docked state:
-                // If a header has reached its top slot (or someone behind it has), make it solid
-                if (j <= lastDockedIndex || finalTop <= slotTop + 1) {
+                // Only make it solid when it actually reaches its top slot
+                if (finalTop <= slotTop + 1) {
                     header.classList.add('docked');
                 } else {
                     header.classList.remove('docked');
