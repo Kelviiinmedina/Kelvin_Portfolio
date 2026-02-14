@@ -60,6 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     }
 
+    let lastActiveIndex = -1;
+
     const updateRollingHeaders = () => {
         const vh = window.innerHeight;
         const stackBottom = 4 * headerHeight;
@@ -109,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const isInStack = (j >= windowStart && j < windowStart + 4);
             const isArriving = (rowRect.top < vh && rowRect.bottom > 0);
 
-            // Dynamic Pixelation Logic
-            if (media) {
+            // Optimized Pixelation Logic: Only update when active index changes or on first load
+            if (media && activeProjectIndex !== lastActiveIndex) {
                 if (j === activeProjectIndex) {
                     media.classList.remove('pixelated');
                 } else {
@@ -141,6 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.style.display = 'none';
             }
         });
+
+        lastActiveIndex = activeProjectIndex;
     };
 
     window.addEventListener('scroll', () => {
