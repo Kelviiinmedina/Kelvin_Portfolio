@@ -103,8 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const isArriving = (rowRect.top < vh && rowRect.bottom > 0);
 
             // Optimized Pixelation Logic: Only update when active index changes or on first load
+            // NEW: Exclude UNOTRANS (Project 0) from pixelation to keep the splash video clear
             if (media && activeProjectIndex !== lastActiveIndex) {
-                if (j === activeProjectIndex) {
+                if (j === activeProjectIndex || j === 0) {
                     media.classList.remove('pixelated');
                 } else {
                     media.classList.add('pixelated');
