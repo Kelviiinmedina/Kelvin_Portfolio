@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.style.top = `${finalTop}px`;
 
                 // Toggle docked state:
-                // Make it solid as soon as it reaches its slot
-                // Increased tolerance to 5px for better reliability on all DPI settings
-                if (finalTop <= slotTop + 5) {
+                // Make it solid if it's the active project OR if it has reached its slot
+                // This ensures the current project always has the grey background fill
+                if (j === activeProjectIndex || finalTop <= slotTop + 5) {
                     header.classList.add('docked');
                 } else {
                     header.classList.remove('docked');
