@@ -104,9 +104,19 @@ document.addEventListener('DOMContentLoaded', () => {
         headers.forEach((header, j) => {
             const row = rows[j];
             const rowRect = row.getBoundingClientRect();
+            const media = row.querySelector('img, video');
 
             const isInStack = (j >= windowStart && j < windowStart + 4);
             const isArriving = (rowRect.top < vh && rowRect.bottom > 0);
+
+            // Dynamic Pixelation Logic
+            if (media) {
+                if (j === activeProjectIndex) {
+                    media.classList.remove('pixelated');
+                } else {
+                    media.classList.add('pixelated');
+                }
+            }
 
             if (isInStack || isArriving) {
                 header.style.visibility = 'visible';
