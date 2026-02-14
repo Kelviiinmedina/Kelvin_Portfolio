@@ -185,6 +185,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Toggle CV Button visiblity
+    const menuBtn = document.querySelector('.menu-btn');
+    const globalNav = document.querySelector('.global-nav');
+    if (menuBtn && globalNav) {
+        menuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            globalNav.classList.toggle('nav-closed');
+        });
+    }
+
     // Bidirectional Navigation Logic (Index <-> CV)
     let isTransitioning = false;
     const isCVPage = window.location.pathname.toLowerCase().includes('cv.html');

@@ -132,7 +132,18 @@ body.transition-gray-grad {
     border: var(--line-weight) solid #000;
     color: #000;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.global-nav.nav-closed .get-on-list {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    border-right: none;
 }
 
 .get-on-list:hover {
