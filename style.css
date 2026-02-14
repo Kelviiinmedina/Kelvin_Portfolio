@@ -421,9 +421,8 @@ body.transition-gray-grad {
 
 /* Global pixelation filter for non-active projects */
 .pixelated {
-    filter: contrast(150%) brightness(80%) blur(5px);
-    /* Note: true SVG pixelation is better handled via JS or specific CSS shaders, 
-       but blur + contrast gives a heavy "distorted" look suitable for this aesthetic */
+    filter: url(#pixelate);
+    /* No blur needed, the filter creates the grid/block effect */
 }
 
 .row-footer-info {
